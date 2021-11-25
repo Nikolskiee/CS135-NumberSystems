@@ -111,13 +111,113 @@ public class AppController {
 				decimal2 = 0;
 		}
 		
-		sumDecimal = Integer.toString(decimal1 + decimal2);
-		prodDecimal = Integer.toString(decimal1 * decimal2);
+		sumDecimal = convertToDecimal(decimal1 + decimal2);
+		prodDecimal = convertToDecimal(decimal1 * decimal2);
 		
 		System.out.println("Sum in Decimal: " + sumDecimal);
 		System.out.println("Product in Decimal: " + prodDecimal);
+		System.out.println();
+		
+		sumBinary = convertToBinary(decimal1 + decimal2);
+		prodBinary = convertToBinary(decimal1 * decimal2);
+		System.out.println("Sum in Binary: " + sumBinary);
+		System.out.println("Product in Binary: " + prodBinary);
+		System.out.println();
+		
+		sumHexadecimal = convertToHexadecimal(decimal1 + decimal2);
+		prodHexadecimal = convertToHexadecimal(decimal1 * decimal2);
+		System.out.println("Sum in Hexadecimal: " + sumHexadecimal);
+		System.out.println("Product in Hexadecimal: " + prodHexadecimal);
+		System.out.println();
+		
+		sumOctal = convertToOctal(decimal1 + decimal2);
+		prodOctal = convertToOctal(decimal1 * decimal2);
+		System.out.println("Sum in Octal: " + sumOctal);
+		System.out.println("Product in Octal: " + prodOctal);
+		
+		
+		
 		
 	}
+	
+	//Decimal to Binary
+	private String convertToBinary(int x) {
+		String binary = "";
+		
+		do{
+			if(x == 0) {
+				binary = Integer.toString(0) + binary;
+				break;
+			}
+			binary = Integer.toString(x%2) + binary;
+			x = x/2;
+		} while (x > 0);
+		
+		return binary;
+	}
+	
+	// Decimal to Decimal
+	private String convertToDecimal(int x) {
+		return Integer.toString(x);
+	}
+	
+	// Decimal to Hexadecimal
+	private String convertToHexadecimal(int x) {
+		String hex = "";
+		
+		do {
+			if(x == 0) {
+				hex = Integer.toString(0) + hex;
+				break;
+			}
+			
+			int r = x % 16;
+			
+			switch(r) {
+				case 10:
+					hex = "A" + hex;
+					break;
+				case 11:
+					hex = "B" + hex;
+					break;
+				case 12:
+					hex = "C" + hex;
+					break;
+				case 13:
+					hex = "D" + hex;
+					break;
+				case 14:
+					hex = "E" + hex;
+					break;
+				case 15:
+					hex = "F" + hex;
+					break;
+				default:
+					hex = Integer.toString(r) + hex;
+			}
+			x = x / 16;
+			
+		} while (x > 0);
+		
+		return hex;
+	}
+	
+	// Decimal to Octal
+	private String convertToOctal(int x) {
+		String octal= "";
+		
+		do{
+			if(x == 0) {
+				octal = Integer.toString(0) + octal;
+				break;
+			}
+			octal = Integer.toString(x%8) + octal;
+			x = x/8;
+		} while (x > 0);
+		
+		return octal;
+	}
+	
 	
 	// Binary to Decimal
 	private int convertFromBinary(String x) {
@@ -191,6 +291,7 @@ public class AppController {
 		
 		return decimal;
 	}
+	
 	
 	
 	
