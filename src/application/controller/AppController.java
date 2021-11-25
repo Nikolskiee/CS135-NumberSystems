@@ -4,6 +4,7 @@ import application.Main;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.TilePane;
 
@@ -24,6 +25,33 @@ public class AppController {
 	
 	@FXML
 	private TilePane base2;
+	
+	@FXML
+	private Label sumBinaryLabel;
+	
+	@FXML
+	private Label prodBinaryLabel;
+	
+	@FXML
+	private Label sumDecimalLabel;
+	
+	@FXML
+	private Label prodDecimalLabel;
+	
+	@FXML
+	private Label sumHexadecimalLabel;
+	
+	@FXML 
+	private Label prodHexadecimalLabel;
+	
+	@FXML
+	private Label sumOctalLabel;
+	
+	@FXML
+	private Label prodOctalLabel;
+	
+	@FXML
+	private Label errorLabel;
 	
 	// Stores the values for the drop down menu: Binary, Decimal, Hexadecimal, Octal 
 	private ComboBox<String> forbase1;
@@ -65,6 +93,8 @@ public class AppController {
 		
 		forbase1.setValue("Binary");
 		forbase2.setValue("Binary");
+		
+		evaluate();
 	}
 	@FXML //Function called by the button, Evaluate.
 	private void evaluate() {
@@ -135,7 +165,17 @@ public class AppController {
 		System.out.println("Sum in Octal: " + sumOctal);
 		System.out.println("Product in Octal: " + prodOctal);
 		
+		sumBinaryLabel.setText(sumBinary);
+		prodBinaryLabel.setText(prodBinary);
 		
+		sumDecimalLabel.setText(sumDecimal);
+		prodDecimalLabel.setText(prodDecimal);
+		
+		sumHexadecimalLabel.setText(sumHexadecimal);
+		prodHexadecimalLabel.setText(prodHexadecimal);
+		
+		sumOctalLabel.setText(sumOctal);
+		prodOctalLabel.setText(prodOctal);
 		
 		
 	}
@@ -291,13 +331,5 @@ public class AppController {
 		
 		return decimal;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
