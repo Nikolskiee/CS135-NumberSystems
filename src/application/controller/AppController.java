@@ -111,8 +111,12 @@ public class AppController {
 				decimal2 = 0;
 		}
 		
-		System.out.println(decimal1);
-		System.out.println(decimal2);
+		sumDecimal = Integer.toString(decimal1 + decimal2);
+		prodDecimal = Integer.toString(decimal1 * decimal2);
+		
+		System.out.println("Sum in Decimal: " + sumDecimal);
+		System.out.println("Product in Decimal: " + prodDecimal);
+		
 	}
 	
 	// Binary to Decimal
@@ -187,6 +191,8 @@ public class AppController {
 		
 		return decimal;
 	}
+	
+	
 	
 	
 	
