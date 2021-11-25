@@ -77,9 +77,42 @@ public class AppController {
 		System.out.println("First Input: " + firstInput + "\tBase: " + firstBase);
 		System.out.println("Second Input: " + secondInput + "\tBase: " + secondBase);
 		
-		decimal1 = convertFromOctal(firstInput);
+		switch(firstBase) {
+			case "Binary":
+				decimal1 = convertFromBinary(firstInput);
+				break;
+			case "Decimal":
+				decimal1 = convertFromDecimal(firstInput);
+				break;
+			case "Hexadecimal":
+				decimal1 = convertFromHexadecimal(firstInput);
+				break;
+			case "Octal":
+				decimal1 = convertFromOctal(firstInput);
+				break;
+			default:
+				decimal1 = 0;
+		}
+		
+		switch(secondBase) {
+			case "Binary":
+				decimal2 = convertFromBinary(secondInput);
+				break;
+			case "Decimal":
+				decimal2 = convertFromDecimal(secondInput);
+				break;
+			case "Hexadecimal":
+				decimal2 = convertFromHexadecimal(secondInput);
+				break;
+			case "Octal":
+				decimal2 = convertFromOctal(secondInput);
+				break;
+			default:
+				decimal2 = 0;
+		}
+		
 		System.out.println(decimal1);
-				
+		System.out.println(decimal2);
 	}
 	
 	// Binary to Decimal
