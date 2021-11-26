@@ -183,7 +183,7 @@ public class AppController {
 	//Decimal to Binary
 	private String convertToBinary(int x) {
 		String binary = "";
-		
+		int multiple = 1;
 		do{
 			if(x == 0) {
 				binary = Integer.toString(0) + binary;
@@ -191,6 +191,10 @@ public class AppController {
 			}
 			binary = Integer.toString(x%2) + binary;
 			x = x/2;
+			if (multiple % 8 == 0) {
+				binary = " " + binary;
+			}
+			multiple++;
 		} while (x > 0);
 		
 		return binary;
@@ -204,7 +208,7 @@ public class AppController {
 	// Decimal to Hexadecimal
 	private String convertToHexadecimal(int x) {
 		String hex = "";
-		
+		int multiple = 1;
 		do {
 			if(x == 0) {
 				hex = Integer.toString(0) + hex;
@@ -236,7 +240,10 @@ public class AppController {
 					hex = Integer.toString(r) + hex;
 			}
 			x = x / 16;
-			
+			if (multiple % 4 == 0) {
+				hex = " " + hex;
+			}
+			multiple++;
 		} while (x > 0);
 		
 		return hex;
@@ -245,7 +252,7 @@ public class AppController {
 	// Decimal to Octal
 	private String convertToOctal(int x) {
 		String octal= "";
-		
+		int multiple = 1;
 		do{
 			if(x == 0) {
 				octal = Integer.toString(0) + octal;
@@ -253,6 +260,12 @@ public class AppController {
 			}
 			octal = Integer.toString(x%8) + octal;
 			x = x/8;
+			
+			if (multiple % 3 == 0) {
+				octal = " " + octal;
+			}
+			multiple++;
+			
 		} while (x > 0);
 		
 		return octal;
@@ -264,11 +277,9 @@ public class AppController {
 		int decimal = 0;
 		int n = x.length();
 		
-		
 		for(int i = n - 1; i >= 0; i--) {
 			decimal += Integer.parseInt(Character.toString(x.charAt(i))) * Math.pow(2, n - 1 - i);
 		}
-		
 		return decimal;
 	}
 	
