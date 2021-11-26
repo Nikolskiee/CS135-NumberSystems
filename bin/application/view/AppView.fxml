@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AppController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AppController">
    <children>
       <Text layoutX="128.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calculator" textAlignment="CENTER" wrappingWidth="243.056640625">
          <font>
@@ -34,7 +34,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Text layoutX="10.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Binary" wrappingWidth="86.0">
+      <Text layoutX="10.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Binary" wrappingWidth="112.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -44,12 +44,12 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="10.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hexadecimal" wrappingWidth="86.0">
+      <Text layoutX="10.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hexadecimal" wrappingWidth="112.0">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="10.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Octal" wrappingWidth="86.0">
+      <Text layoutX="10.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Octal" wrappingWidth="112.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -62,5 +62,10 @@
       <Label fx:id="prodHexadecimalLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="308.0" layoutY="310.0" prefHeight="19.0" prefWidth="180.0" text="Label" textAlignment="CENTER" />
       <Label fx:id="sumOctalLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="123.0" layoutY="340.0" prefHeight="19.0" prefWidth="180.0" text="Label" textAlignment="CENTER" />
       <Label fx:id="prodOctalLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="309.0" layoutY="340.0" prefHeight="19.0" prefWidth="180.0" text="Label" textAlignment="CENTER" />
+      <Label fx:id="errorLabel" contentDisplay="CENTER" layoutX="16.0" layoutY="159.0" prefHeight="17.0" prefWidth="334.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

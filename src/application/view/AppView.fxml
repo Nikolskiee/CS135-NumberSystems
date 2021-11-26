@@ -34,7 +34,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Text layoutX="10.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Binary" wrappingWidth="86.0">
+      <Text layoutX="10.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Binary" wrappingWidth="112.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -44,12 +44,12 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="10.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hexadecimal" wrappingWidth="86.0">
+      <Text layoutX="10.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hexadecimal" wrappingWidth="112.0">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="10.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Octal" wrappingWidth="86.0">
+      <Text layoutX="10.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Octal" wrappingWidth="112.0">
          <font>
             <Font size="14.0" />
          </font>
