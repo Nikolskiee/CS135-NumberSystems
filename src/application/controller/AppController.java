@@ -1,5 +1,8 @@
 package application.controller;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import application.Main;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -94,6 +97,7 @@ public class AppController {
 		forbase1.setValue("Binary");
 		forbase2.setValue("Binary");
 		
+		errorLabel.setText("");
 		evaluate();
 	}
 	@FXML //Function called by the button, Evaluate.
@@ -103,6 +107,10 @@ public class AppController {
 		
 		firstBase = forbase1.getValue().toString();
 		secondBase = forbase2.getValue().toString();
+		
+		if(checkErrors()) {
+			return;
+		}
 		
 		System.out.println("First Input: " + firstInput + "\tBase: " + firstBase);
 		System.out.println("Second Input: " + secondInput + "\tBase: " + secondBase);
@@ -178,6 +186,125 @@ public class AppController {
 		prodOctalLabel.setText(prodOctal);
 		
 		
+	}
+	
+	private boolean checkErrors() {
+		boolean hasErrors = false;
+		Pattern pattern;
+		Matcher matcher;
+		boolean matchFound;
+		
+		
+		if(firstBase.equals("Binary")){
+			pattern = Pattern.compile("^[01 ]+$", Pattern.CASE_INSENSITIVE);
+			matcher = pattern.matcher(firstInput);
+			matchFound = matcher.find();
+			
+			if(!matchFound) {
+				hasErrors = true;
+				errorLabel.setText("Error: Base 2 Invalid Input!");
+				input1.setStyle("-fx-background-color: red");
+				return hasErrors;
+			}
+		} 
+		if (firstBase.equals("Decimal")){
+			pattern = Pattern.compile("^[0-9 ]+$", Pattern.CASE_INSENSITIVE);
+			matcher = pattern.matcher(firstInput);
+			matchFound = matcher.find();
+			
+			if(!matchFound) {
+				hasErrors = true;
+				errorLabel.setText("Error: Base 10 Invalid Input!");
+				input1.setStyle("-fx-background-color: red");
+				return hasErrors;
+			}
+		}
+		if(firstBase.equals("Hexadecimal")) {
+			pattern = Pattern.compile("^[A-Fa-f0-9 ]+$", Pattern.CASE_INSENSITIVE);
+			matcher = pattern.matcher(firstInput);
+			matchFound = matcher.find();
+			
+			if(!matchFound) {
+				hasErrors = true;
+				errorLabel.setText("Error: Base 16 Invalid Input!");
+				input1.setStyle("-fx-background-color: red");
+				return hasErrors;
+			}
+		}
+		if(firstBase.equals("Octal")) {
+			pattern = Pattern.compile("^[0-7 ]+$", Pattern.CASE_INSENSITIVE);
+			matcher = pattern.matcher(firstInput);
+			matchFound = matcher.find();
+			
+			if(!matchFound) {
+				hasErrors = true;
+				errorLabel.setText("Error: Base 8 Invalid Input!");
+				input1.setStyle("-fx-background-color: red");
+				return hasErrors;
+			}
+		}
+		
+		System.out.println("No Errors");
+		hasErrors = false;
+		errorLabel.setText("");
+		input1.setStyle("-fx-background-color: white");
+		
+		
+		if(secondBase.equals("Binary")){
+			pattern = Pattern.compile("^[01 ]+$", Pattern.CASE_INSENSITIVE);
+			matcher = pattern.matcher(secondInput);
+			matchFound = matcher.find();
+			
+			if(!matchFound) {
+				hasErrors = true;
+				errorLabel.setText("Error: Base 2 Invalid Input!");
+				input2.setStyle("-fx-background-color: red");
+				return hasErrors;
+			}
+		} 
+		if (secondBase.equals("Decimal")){
+			pattern = Pattern.compile("^[0-9 ]+$", Pattern.CASE_INSENSITIVE);
+			matcher = pattern.matcher(secondInput);
+			matchFound = matcher.find();
+			
+			if(!matchFound) {
+				hasErrors = true;
+				errorLabel.setText("Error: Base 10 Invalid Input!");
+				input2.setStyle("-fx-background-color: red");
+				return hasErrors;
+			}
+		}
+		if(secondBase.equals("Hexadecimal")) {
+			pattern = Pattern.compile("^[A-Fa-f0-9 ]+$", Pattern.CASE_INSENSITIVE);
+			matcher = pattern.matcher(secondInput);
+			matchFound = matcher.find();
+			
+			if(!matchFound) {
+				hasErrors = true;
+				errorLabel.setText("Error: Base 16 Invalid Input!");
+				input2.setStyle("-fx-background-color: red");
+				return hasErrors;
+			}
+		}
+		if(secondBase.equals("Octal")) {
+			pattern = Pattern.compile("^[0-7 ]+$", Pattern.CASE_INSENSITIVE);
+			matcher = pattern.matcher(secondInput);
+			matchFound = matcher.find();
+			
+			if(!matchFound) {
+				hasErrors = true;
+				errorLabel.setText("Error: Base 8 Invalid Input!");
+				input2.setStyle("-fx-background-color: red");
+				return hasErrors;
+			}
+		}
+		
+		System.out.println("No Errors");
+		hasErrors = false;
+		errorLabel.setText("");
+		input2.setStyle("-fx-background-color: white");
+		
+		return hasErrors;
 	}
 	
 	//Decimal to Binary
