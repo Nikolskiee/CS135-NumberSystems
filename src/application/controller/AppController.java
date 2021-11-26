@@ -274,6 +274,7 @@ public class AppController {
 	
 	// Binary to Decimal
 	private int convertFromBinary(String x) {
+		x = x.replace(" ", "");
 		int decimal = 0;
 		int n = x.length();
 		
@@ -285,11 +286,13 @@ public class AppController {
 	
 	// Decimal to Decimal
 	private int convertFromDecimal(String x) {
+		x = x.replace(" ", "");
 		return Integer.parseInt(x);
 	}
 	
 	// Hexadecimal to Decimal
 	private int convertFromHexadecimal(String x) {
+		x = x.replace(" ", "");
 		int decimal = 0;
 		int n = x.length();
 		
@@ -332,6 +335,7 @@ public class AppController {
 	
 	// Octal to Decimal
 	private int convertFromOctal(String x) {
+		x = x.replace(" ", "");
 		int decimal = 0;
 		int n = x.length();
 		
