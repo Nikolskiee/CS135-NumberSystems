@@ -439,6 +439,22 @@ public class AppController {
 			multiple++;
 		} while (x > 0);
 		
+		String temp = binary;
+		
+		temp = temp.replaceAll("\\s", "");
+		
+		int leading = 8 - (temp.length() % 8);
+		String zeroes = "";
+		
+		if ((temp.length() % 8) != 0) {
+			for (int i = 0; i < leading; i++) {
+				zeroes += "0";
+			}
+			
+		}
+		
+		binary = "" + zeroes + binary;
+		
 		return binary;
 	}
 	
@@ -496,6 +512,22 @@ public class AppController {
 			multiple++;
 		} while (x > 0);
 		
+		String temp = hex;
+		
+		temp = temp.replaceAll("\\s", "");
+		
+		int leading = 4 - (temp.length() % 4);
+		String zeroes = "";
+		
+		if ((temp.length() % 4) != 0) {
+			for (int i = 0; i < leading; i++) {
+				zeroes += "0";
+			}
+			
+		}
+		
+		hex = "" + zeroes + hex;
+		
 		return hex;
 	}
 	
@@ -521,6 +553,22 @@ public class AppController {
 			multiple++;
 			
 		} while (x > 0);
+		
+		String temp = octal;
+		
+		temp = temp.replaceAll("\\s", "");
+		
+		int leading = 3 - (temp.length() % 3);
+		String zeroes = "";
+		
+		if ((temp.length() % 3) != 0) {
+			for (int i = 0; i < leading; i++) {
+				zeroes += "0";
+			}
+			
+		}
+		
+		octal = "" + zeroes + octal;
 		
 		return octal;
 	}
